@@ -37,15 +37,172 @@
 	<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 	<![endif]-->
 
+	<style>
+		#body_overlay {
+			display: none;
+			width: 50%;
+			height: 50%;
+			position: absolute;
+			top: 0;
+			right: 0;
+			bottom: 0;
+			left: 0;
+			margin: auto;
+			background-color: rgba(0,0,0,0.9);
+			z-index: 2;
+		}
+
+		#linkTo {
+			text-align: center;
+		}
+
+		#linkTo p {
+			margin-top: 0.4em;
+			font-size: 3.0em;
+			color: #FFF;
+		}
+
+		#objectives {
+			text-align: center;
+		}
+
+		#linkTo ul {
+			display: inline-block;
+		}
+
+		#linkTo ul li {
+			text-align: left;
+		}
+
+		#linkTo a {
+			background-color: #660000;
+			color: #fff;
+			width: 100%;
+		}
+
+		.jumbotron {
+			background-color: #353535;
+		}
+
+		.lead-btn {
+			margin-top: 1.4em;
+		}
+
+		#description {
+			margin: 2.0em 3.5em;
+		}
+		#links {
+			background-color: #353535;	
+		}
+
+		#links button {
+			margin: 2.0em;
+			height: 200px;
+			width: 200px;
+			background-color: rgba(52, 101, 127, 1.0);
+			color: rgba(0, 0, 0, 1.0);
+			font-size: 1.4em;
+			border-radius: 20px;
+		}
+
+		#links button:hover {
+			height: 190px;
+			width: 190px;
+			box-shadow: -5px -5px 8px #888888;
+			background-color: rgba(52, 101, 127, 1.0);
+			color: rgba(0, 0, 0, 1.0);
+		}
+	</style>
 </head>
 
 <body>
+
+<div id="body_overlay">
+	<div class="container-fluid">
+		<div class="row" id="linkTo">  <!-- Begin Row for Description -->
+			<div class="col-sm-12">
+				<p class="h3">Roadmap To SIUccess!</p>
+				<div id="objectives">
+				<ul>
+					<li>Our Leaning Objectives Go Here</li>
+					<li>Our Leaning Objectives Go Here</li>
+					<li>Our Leaning Ob-jectives Go Here</li>
+					<li>Our Leaning Objectives Go Here</li>
+				</ul>
+				</div>
+				<p><a class="btn" id="linkToButton" href="display.html" role="button"><img height="50" width="50" src="assets/paw.png"><br />Start!</a></p>
+			</div>
+		</div>
+	</div>
+</div> <!-- End #/body_overlay -->
+<div class="jumbotron">
+	<div class="row">
+		<div class="col-sm-1">
+		</div>
+		<div class="col-sm-3">
+			<img src="assets/siu-logo.png" class="img-responsive">
+		</div>
+		<div class="col-sm-6 text-center">
+			<h1>Computer Science</h1>
+			<h2>Core Concentrations</h2>
+			<p><a class="btn btn-primary btn-lg lead-btn"  role="button" onclick="produceFilter()">Discover More!</a></p>
+		</div>
+		<div class="col-sm-2">
+		</div>
+	</div>
+</div> <!-- End ./jumbotron -->
+
+<div class="container-fluid">
+	<div class="row" id="description">  <!-- Begin Row for Description -->
+		<div class="col-sm-1">
+		</div>
+		<div class="col-sm-10">
+			<p>Computer science majors can use their electives to form an optional concentration in five different&nbsp;computer science areas: computer graphics and game development; computer networks and&nbsp;security; database and systems; software engineering and application development; or artificial&nbsp;intelligence and robotics. Computer science majors must take three courses (out of their 400-level&nbsp;electives) from a particular topic to receive a concentration in that area. Concentrations will not&nbsp;appear on the diploma but will be stated on a certificate issued by the department. The list of the&nbsp;courses for each concentration is as follows:</p>
+<!--			<ul>
+				<li>&nbsp; &nbsp; Computer Graphics and Game Development: <a href="http://cs.siu.edu/_common/documents/courses/CS 484 as of 11-25-2013.pdf" target="_blank" title="cs484">CS 484</a>, <a href="http://cs.siu.edu/_common/documents/courses/CS485_Dec02.pdf" target="_blank" title="cs485">CS 485</a>, <a href="http://cs.siu.edu/_common/documents/courses/cs487_n.pdf" target="_blank">CS 487</a></li>
+				<li>&nbsp; &nbsp; Computer Networks and Security: <a href="http://cs.siu.edu/_common/documents/courses/CS408.pdf" target="_blank" title="cs408">CS 408</a>, <a href="http://cs.siu.edu/_common/documents/courses/CS 410 as of 10-30-2013.pdf" target="_blank" title="cs410">CS 410</a>, <a href="http://cs.siu.edu/_common/documents/courses/CS 440 as of 11-13-2013.pdf" target="_blank" title="cs440">CS 440</a>, <a href="http://cs.siu.edu/_common/documents/courses/CS441.pdf" target="_blank" title="cs441">CS 441</a></li>
+				<li>&nbsp; &nbsp; Database and Systems: <a href="http://cs.siu.edu/_common/documents/courses/CS401.pdf" target="_blank" title="cs401">CS 401</a>, <a href="http://cs.siu.edu/_common/documents/courses/CS406.pdf" target="_blank" title="cs406">CS 406</a>, <a href="http://cs.siu.edu/_common/documents/courses/CS420.pdf" target="_blank" title="cs420">CS 420</a>, <a href="http://cs.siu.edu/_common/documents/courses/CS430.pdf" target="_blank" title="cs430">CS 430</a>, <a href="http://cs.siu.edu/_common/documents/courses/CS455.pdf" target="_blank" title="cs455">CS 455</a></li>
+				<li>&nbsp; &nbsp; Artificial Intelligence and Robotics: <a href="http://cs.siu.edu/_common/documents/courses/CS404.pdf" target="_blank" title="cs404">CS 404</a>, <a href="http://cs.siu.edu/_common/documents/courses/CS436.pdf" target="_blank" title="cs436">CS 436</a>, <a href="http://cs.siu.edu/_common/documents/courses/CS437.pdf" target="_blank" title="cs437">CS 437</a>&nbsp;</li>
+				<li>&nbsp; &nbsp;&nbsp;Software Engineering and Application Development:&nbsp;<a href="http://cs.siu.edu/_common/documents/courses/CS406.pdf" target="_blank" title="cs406">CS 406</a>,&nbsp;<a href="http://cs.siu.edu/_common/documents/courses/cs412_n.pdf" target="_blank" title="cs412">CS 412</a>,&nbsp;<a href="http://cs.siu.edu/_common/documents/courses/CS 435 as of 10-31-2013.pdf" target="_blank" title="cs435">CS 435</a>,&nbsp;<a href="http://cs.siu.edu/_common/documents/courses/CS 484 as of 11-25-2013.pdf" target="_blank" title="cs484">CS484</a></li>
+			</ul> -->
+		</div>
+		<div class="col-sm-1">
+		</div> 
+	</div> <!-- End ./row for #/Description -->
+	<div class="row" id="links">
+		<div class="col-sm-1">
+
+		</div>
+		<div class="col-sm-2">
+			<button  onclick="produceFilter()">Artificial Intelligence and Robotics</button>
+		</div>
+		<div class="col-sm-2">
+			<button  onclick="produceFilter()">Computer Graphics and Game Development</button>
+		</div>
+		<div class="col-sm-2">
+			<button  onclick="produceFilter()">Computer Networks and Security</button>
+		</div>
+		<div class="col-sm-2">
+			<button  onclick="produceFilter()">Database and Systems</button>
+		</div>
+		<div class="col-sm-2">
+			<button  onclick="produceFilter()">Software Engineering and Application Development</button>
+		</div>
+		<div class="col-sm-1">
+
+		</div>
+	</div> <!-- End #/footer -->
+</div> <!-- End ./container for bootstrap -->
+
 
 <script src="js/jquery.js"></script>
 <script src="js/bootstrap.js"></script>
 
 <!-- Custom Theme JavaScript -->
 <script>
+function produceFilter(){
+	document.getElementById("body_overlay").style.display="block";
+}
 </script>
 </body>
 </html>

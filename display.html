@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<!--
+		Filename:    display.html
+		Description: eLearning Display
+		Author:  	 Kirk Powell
+		Contact: 	 kirk@thegamestoreapp.com
+	-->
+
+	<!-- Meta tags -->
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="keywords" content="">
+	<meta name="description" content="">
+	<meta name="application-name" content="">
+	<meta name="author" content="Kirk Powell (www.thegamestoreapp.com)">
+	<meta name="designer" content="Kirk Powell (www.thegamestoreapp.com)">
+	<meta name="robots" content="index,follow">
+
+	<title>Computer Science Concentrations</title>
+
+	<!-- CSS links -->
+	<link rel="stylesheet" type="text/css" href="css/reset.css">
+	<link rel="stylesheet" type="text/css" href="css/vanilla.css">
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="css/font-awesome.css">	
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+
+	<link href='http://fonts.googleapis.com/css?family=Droid+Serif' rel='stylesheet' type='text/css'>
+	<!-- Scripts -->
+	<!-- HTML5 Shim and Respond.js are here to provide IE8 support of HTML5 elements and media queries -->
+	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+	<!--[if lt IE 9]>
+	<script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+	<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+	<![endif]-->
+
+	<!-- Custom Theme CSS -->
+	<style>
+		#header {
+			background-color: #E8E6DD;
+			border-bottom: 2px solid rgba(0,0,0,0.5);
+		}
+		#header-logo {
+			padding: 2.5em;
+		}
+
+		p#header-title {
+			font-family: georgia, serif;
+		    font-size: 1.5em;
+		    color: #000000;
+		    font-weight: normal;
+    		font-style: normal;
+    		margin-top: 1.4em;
+		}
+
+		ul#navigation {
+			list-style: none;
+			padding: 2.0em;
+		}
+
+		ul#navigation li {
+			padding: 1.0em;
+		}
+
+		ul#navigation li button {
+			height: 65px;
+			width: 280px;
+			background-color: #660000;
+			color: #fff;
+			font-size: 2.2em;
+		}
+
+		#display_field {
+			margin: 2.0em;
+		}
+
+		#display_field #introduction {
+			display: none;
+		}
+
+		#display_field #academics {
+			display: none;
+		}
+
+		#display_field #career {
+			display: none;
+		}
+
+		#display_field #examples {
+			display: none;
+		}
+
+		#display_field #future {
+			display: none;
+		}
+
+	</style>
+</head>
+
+<body onload="introduction()">
+
+<div class="container-fluid">
+	<div class="row" id="header">
+		<div class="col-sm-1">
+		</div>
+		<div class="col-sm-4">
+			<img src="assets/defaultHome-half.png" class="img-responsive" id="header-logo">
+		</div>
+		<div class="col-sm-6">
+			<p id="header-title">Computer Science<br />Your Tilte for the Concentration Goes Here</p>
+		</div>
+		<div class="col-sm-1">
+		</div>
+	</div> <!-- End ./row for header -->
+	<div class="row">
+		<div class="col-sm-4">
+			<ul id="navigation">
+				<li><button onclick="introduction()">Introduction</button></li>
+				<li><button onclick="academics()">Academics</button></li>
+				<li><button onclick="career()">Career</button></li>
+				<li><button onclick="examples()">Examples</button></li>
+				<li><button onclick="future()">Future</button></li>
+			</ul>
+		</div>
+		<div class="col-sm-8">
+			<div id="display_field"> <!-- Use the Display Field Div to wrap any content here! -->
+				<div id="introduction">
+					<p class="h1">Introduction</p>
+					<p class="h4">Describe the field that you are going to be featuring.  Use lots of descriptive words and ideas.  This text can take most of the page area, but probably shouldn't run off the page.</p>
+				</div>
+				<div id="academics">
+					<p class="h1">Academics</p>
+					<p class="h4">Describe the field that you are going to be featuring.  Use lots of descriptive words and ideas.  This text can take most of the page area, but probably shouldn't run off the page.</p>
+				</div>
+				<div id="career">
+					<p class="h1">Career</p>
+					<p class="h4">Describe the field that you are going to be featuring.  Use lots of descriptive words and ideas.  This text can take most of the page area, but probably shouldn't run off the page.</p>
+				</div>
+				<div id="examples">
+					<p class="h1">Examples</p>
+					<p class="h4">Describe the field that you are going to be featuring.  Use lots of descriptive words and ideas.  This text can take most of the page area, but probably shouldn't run off the page.</p>
+				</div>
+				<div id="future">
+					<p class="h1">Future</p>
+					<p class="h4">Describe the field that you are going to be featuring.  Use lots of descriptive words and ideas.  This text can take most of the page area, but probably shouldn't run off the page.</p>
+				</div>
+			</div>
+		</div>
+	</div>
+</div> <!-- End ./container for bootstrap -->
+
+<script src="js/jquery.js"></script>
+<script src="js/bootstrap.js"></script>
+
+<!-- Custom Theme JavaScript -->
+<script>
+
+function introduction(){
+	document.getElementById("introduction").style.display="block";
+	document.getElementById("academics").style.display="none";
+	document.getElementById("career").style.display="none";
+	document.getElementById("examples").style.display="none";
+	document.getElementById("future").style.display="none";
+}
+
+function academics(){
+	document.getElementById("introduction").style.display="none";
+	document.getElementById("academics").style.display="block";
+	document.getElementById("career").style.display="none";
+	document.getElementById("examples").style.display="none";
+	document.getElementById("future").style.display="none";
+}
+
+function career(){
+	document.getElementById("introduction").style.display="none";
+	document.getElementById("academics").style.display="none";
+	document.getElementById("career").style.display="block";
+	document.getElementById("examples").style.display="none";
+	document.getElementById("future").style.display="none";
+}
+
+function examples(){
+	document.getElementById("introduction").style.display="none";
+	document.getElementById("academics").style.display="none";
+	document.getElementById("career").style.display="none";
+	document.getElementById("examples").style.display="block";
+	document.getElementById("future").style.display="none";
+}
+
+function future(){
+	document.getElementById("introduction").style.display="none";
+	document.getElementById("academics").style.display="none";
+	document.getElementById("career").style.display="none";
+	document.getElementById("examples").style.display="none";
+	document.getElementById("future").style.display="block";
+}
+</script>
+</body>
+</html>
