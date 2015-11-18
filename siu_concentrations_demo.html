@@ -38,6 +38,10 @@
 	<![endif]-->
 
 	<style>
+		body {
+			background-color:  #353535; 
+		}
+
 		#body_overlay {
 			display: none;
 			width: 50%;
@@ -89,10 +93,12 @@
 		}
 
 		#description {
-			margin: 2.0em 3.5em;
+			padding: 3.2em;
+			background-color: #fff;
 		}
+
 		#links {
-			background-color: #353535;	
+			background-color: #353535;
 		}
 
 		#links button {
@@ -124,10 +130,10 @@
 				<p class="h3">Roadmap To SIUccess!</p>
 				<div id="objectives">
 				<ul>
-					<li>Our Leaning Objectives Go Here</li>
-					<li>Our Leaning Objectives Go Here</li>
-					<li>Our Leaning Ob-jectives Go Here</li>
-					<li>Our Leaning Objectives Go Here</li>
+					<li>Identify different uses of networks</li>
+					<li>Recognize different components and their usage</li>
+					<li>Spot different job roles depending on designation</li>
+					<li>Categorize the network type based on the area it covers</li>
 				</ul>
 				</div>
 				<p><a class="btn" id="linkToButton" href="display.html" role="button"><img height="50" width="50" src="assets/paw.png"><br />Start!</a></p>
@@ -169,19 +175,21 @@
 		<div class="col-sm-1">
 		</div> 
 	</div> <!-- End ./row for #/Description -->
+	<!--
 	<div class="row" id="links">
 		<div class="col-sm-1">
-
 		</div>
+		<!-- // These buttons are hidden since only one subject is being modeled
 		<div class="col-sm-2">
 			<button  onclick="produceFilter()">Artificial Intelligence and Robotics</button>
 		</div>
 		<div class="col-sm-2">
 			<button  onclick="produceFilter()">Computer Graphics and Game Development</button>
 		</div>
-		<div class="col-sm-2">
-			<button  onclick="produceFilter()">Computer Networks and Security</button>
+		<div class="col-sm-10" style="text-align: center">
+			<button  onclick="produceFilter()">Computer Networks</button>
 		</div>
+		<!-- // These buttons are hidden since only one subject is being modeled
 		<div class="col-sm-2">
 			<button  onclick="produceFilter()">Database and Systems</button>
 		</div>
@@ -189,7 +197,6 @@
 			<button  onclick="produceFilter()">Software Engineering and Application Development</button>
 		</div>
 		<div class="col-sm-1">
-
 		</div>
 	</div> <!-- End #/footer -->
 </div> <!-- End ./container for bootstrap -->
