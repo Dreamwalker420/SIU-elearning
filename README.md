@@ -11,7 +11,11 @@ CS 532 elearning module for Computer Science concentrations
 
 With the expansion of the field of Computer Science, several unique concentrations have evolved at Southern Illinois University.  As such, a new student may not be unique familiar with these terms and the fields that they cover.  We intend to build a light interactive environment to easily explore and identify with these concentration concepts in a fully-enclosed module.  Enable students to make informed decisions about which concentration best suits their career goals will better serve the community.
 
-## Learning Outcomes/Goals
+## Learning Goal
+
+* Educational path to the Concentration and the Career path afterwards.
+
+## Learning Outcomes
 
 * Improve clarity of concentration with brief awareness.
 * Isolate user paths for choosing a concentration.
@@ -23,9 +27,12 @@ With the expansion of the field of Computer Science, several unique concentratio
 
 ## Learning Objectives
 
-* Click-through linkage to a module
 * Demonstrate course requirements and prerequisites 
-
+* Concentration set
+* Available Electives
+* What will be learned and how it is applied in the field of study
+* The career options available to a well-educated student
+* Compensation expectations
 
 ## Project Timeline
 

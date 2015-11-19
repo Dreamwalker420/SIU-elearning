@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<!--
+		Filename:    display.html
+		Description: eLearning Display
+		Author:  	 Kirk Powell
+		Contact: 	 kirk@thegamestoreapp.com
+	-->
+
+	<!-- Meta tags -->
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="keywords" content="">
+	<meta name="description" content="">
+	<meta name="application-name" content="">
+	<meta name="author" content="Kirk Powell (www.thegamestoreapp.com)">
+	<meta name="designer" content="Kirk Powell (www.thegamestoreapp.com)">
+	<meta name="robots" content="index,follow">
+
+	<title>Computer Science Concentrations</title>
+
+	<!-- CSS links -->
+	<link rel="stylesheet" type="text/css" href="css/reset.css">
+	<link rel="stylesheet" type="text/css" href="css/vanilla.css">
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="css/font-awesome.css">	
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+
+	<link href='http://fonts.googleapis.com/css?family=Droid+Serif' rel='stylesheet' type='text/css'>
+	<!-- Scripts -->
+	<!-- HTML5 Shim and Respond.js are here to provide IE8 support of HTML5 elements and media queries -->
+	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+	<!--[if lt IE 9]>
+	<script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+	<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+	<![endif]-->
+
+	<!-- Custom Theme CSS -->
+	<style>
+#scroll_button {
+/*	display: none; */
+	position: absolute;
+	bottom: 2.0em;
+	right: 2.0em;
+	z-index: 2;
+}
+
+#scroll_button button{
+	background-color: #660000;
+}
+
+		#body_overlay {
+			display: none;
+			width: 60%;
+			height: 60%;
+			position: absolute;
+			top: 0;
+			right: 0;
+			bottom: 0;
+			left: 0;
+			margin: auto;
+			background-color: rgba(0,0,0,0.95);
+			z-index: 2;
+		}
+
+		#insert {
+			background-color: #fff;
+			margin: 0.9em;
+			height: 94%;
+		}
+
+		#linkTo {
+			text-align: center;
+		}
+
+		#linkTo p {
+			margin-top: 0.4em;
+			color: #660000;
+		}
+
+		#linkTo p.question {
+			margin-top: 1.0em;
+			text-align: left;
+		}
+
+		#linkTo ul {
+			text-align: left;
+			list-style: none;
+		}
+
+		#linkTo button {
+			background-color: #660000;
+			color: #fff;
+			width: 100%;
+			margin-top: 1.0em;
+		}
+
+		#linkTo img {
+			margin: 0.4em;
+		}
+
+		#linkTo span {
+			font-size: 0.5em;
+		}
+
+		#q1, #q2, #q3, #q4 {
+			display: none;
+		}
+
+#header {
+	background-color: #E8E6DD;
+	border-bottom: 2px solid rgba(0,0,0,0.5);
+}
+
+#header-logo {
+	padding: 2.5em;
+}
+
+p#header-title {
+	font-family: georgia, serif;
+    font-size: 1.5em;
+    color: #000000;
+    font-weight: normal;
+	font-style: normal;
+	margin-top: 1.4em;
+}
+
+.emphasis {
+	font-style: italic;
+}
+
+ul#navigation {
+	list-style: none;
+	padding: 2.0em;
+}
+
+ul#navigation li {
+	padding: 1.0em;
+}
+
+ul#navigation li button {
+	height: 65px;
+	width: 280px;
+	background-color: #660000;
+	color: #fff;
+	font-size: 2.2em;
+}
+
+#display_field {
+	margin: 2.0em;
+}
+
+#display_field #introduction {
+	display: none;
+}
+
+#display_field #academics {
+	display: none;
+}
+
+#display_field #career {
+	display: none;
+}
+
+#display_field #examples {
+	display: none;
+}
+
+#display_field #future {
+	display: none;
+}
+
+#display_field #followup {
+	display: none;
+}
+
+	</style>
+</head>
+
+<body onload="introduction()" id="check_for_scrollbar">
+<div id="scroll_button">
+	<button id="link">Click Me To Scroll!</button>
+</div>
+<!--
+<div id="body_overlay">
+	<div class="container-fluid" id="insert">
+		<div class="row" id="linkTo">  <!-- Begin Row for Description
+			<div class="col-sm-12">
+				<div id="q1">
+					<p class="h2">On Your Way To SIUccess!</p>
+					<p>Let's see what you have learned? ...</p>
+					<p class="question">Which of the following services are not offered by networking?</p>
+					<ul>
+						<li>a. File sharing</li>
+						<li>b. Mobile sharing</li>
+						<li>c. Sending Emails</li>
+					</ul>
+					<button onclick="checkAnswer()"><img height="50" width="50" src="assets/paw.png"><br /><span id="shrink">Submit Answer</span></button>
+				</div>
+				<div id="q2">
+					<p class="h2">On Your Way To SIUccess!</p>
+					<p>Let's see what you have learned? ...</p>
+					<p class="question">Which component is used to connect one computer to another to share hardware devices (like a printer)?</p>
+					<ul>
+						<li>a. Cable</li>
+						<li>b. Modem</li>
+						<li>c. Router</li>
+					</ul>
+					<button onclick="checkAnswer()"><img height="50" width="50" src="assets/paw.png"><br /><span id="shrink">Submit Answer</span></button>
+				</div>
+				<div id="q3">
+					<p class="h2">On Your Way To SIUccess!</p>
+					<p>Let's see what you have learned? ...</p>
+					<p class="question">What network connections exist within buildings?</p>
+					<ul>
+						<li>a. LAN</li>
+						<li>b. WAN</li>
+						<li>c. MAN</li>
+					</ul>
+					<button onclick="checkAnswer()"><img height="50" width="50" src="assets/paw.png"><br /><span id="shrink">Submit Answer</span></button>
+				</div>
+				<div id="q4">
+					<p class="h2">On Your Way To SIUccess!</p>
+					<p>Let's see what you have learned? ...</p>
+					<p class="question">Providing technical support to staff is the role of ... ?</p>
+					<ul>
+						<li>a. Network Administrator</li>
+						<li>b. Network Engineer</li>
+						<li>c. Network Manager</li>
+					</ul>
+					<button onclick="checkAnswer()"><img height="50" width="50" src="assets/paw.png"><br /><span id="shrink">Submit Answer</span></button>
+				</div>
+			</div>
+		</div>
+	</div>
+</div> <!-- End #/body_overlay -->
+<div class="container-fluid">
+	<div class="row" id="header">
+		<div class="col-sm-1">
+		</div>
+		<div class="col-sm-4">
+			<img src="assets/defaultHome-half.png" class="img-responsive" id="header-logo">
+		</div>
+		<div class="col-sm-6">
+			<p id="header-title">Computer Science Concentrations<br /><span class="emphasis">Computer Networks</span></p>
+		</div>
+		<div class="col-sm-1">
+		</div>
+	</div> <!-- End ./row for header -->
+	<div class="row">
+		<div class="col-sm-4">
+			<ul id="navigation">
+				<li><button onclick="introduction()">Introduction</button></li>
+				<li><button onclick="academics()">Academics</button></li>
+				<li><button onclick="career()">Career</button></li>
+				<li><button onclick="examples()">Examples</button></li>
+				<li><button onclick="future()">Future</button></li>
+				<li><button onclick="followup()">Follow-Up!</button></li>
+			</ul>
+		</div>
+		<div class="col-sm-8">
+			<div id="display_field"> <!-- Use the Display Field Div to wrap any content here! -->
+				<div id="introduction">
+					<p class="h1"><font color="#8A0808">Introduction:</font></p>					
+					<p class="h4"><b><font color="orange">WHAT IS NETWORKING?</font></b><br />
+					<p>In the world of computers, networking is <b><font color="blue">communication between two or more computing devices</font></b> with each other for the purpose of sharing data and services.<center><img src="assets/Global-Networks.jpg" height="250"></p></center><br />
+					<p class="h4"><b><font color="orange">WHY DO WE NEED IT?</font></b><br /></p>
+					<p>Can we imagine our world now without different services offered by internet LIKE emails, chat, Blogs!</p><center><img src="assets/ohh-noo.png" height="150"></center><br />
+					<p class="h4"><b><font color="ORANGE">HERE ARE SOME OF THE USES OF NETWORKING:</font></b><br /></p>				
+					<p><b>1.File sharing.</b><br /><b>2.Hardware sharing</b>( like printers and scanners)<br /><b>3.User communication</b>(Emails, Messages, video calls)<br /><b>4.Centalized support and administration</b><br /></p>					
+					<p><b><font color="orange"> HERE IS THE SIMPLE EXAMPLE TO SHOW HOW A NETWORK WORKS</font></b></p>
+					<center>
+					<video width="400" controls>
+                    <source src="works.MOV" type="video/mp4">
+                    <source src="mov_bbb.ogg" type="video/ogg">
+                    Your browser does not support HTML5 video.
+                    </video></center>
+					<button class="btn-continue" onclick="academics()">Components</button>
+				</div>
+				<div id="academics">
+					<p class="h1"><b><font color="#8A0808">Components of Networking</b></font></p>
+					<p class="h4"><b><font color="orange">1.Cable</font></b></p>
+					<p><img src="assets/cables.jpg" height="150"></p>					
+					<p>Networking cables are used <b>to connect one network device to other network devices</b> or to connect two or more computers to share printer, scanner etc</p>
+					<p class="h4"><b><font color="orange">2.Hub</font></b></p>
+					<p><img src="assets/hub.jpg" height="150"></p>
+					<p>A hub is a common connection point for devices in a network. Hubs are commonly used to connect segments of a LAN.</p>
+					<p class="h4"><b><font color="orange">3.Router</font></b></p>
+					<p><img src="assets/router.jpg" height="150"></p>
+					<p>A router is an electronic device and/or software that connects at least two networks and forwards packets among them according to the information in the packet headers and routing tables</p>
+                    <p class="h4"><b><font color="orange">4.switch</font></b></p>
+					<p><img src="assets/switch.jpg" height="150"></p>
+					<p>A Network Switch is a constituent of computer network that connects two network slices and/or two network devices (switches or routers) together</p>
+					<button class="btn-continue" onclick="career()">Networks</button>
+				</div>
+				<div id="career">
+					<p class="h1"><b><font color="#8A0808">Types of Networks</b></font></p>
+					<p>There are so many different types of computer networks in existence, it can be hard to understand the differences between them, particularly the ones with very similar-sounding names. Some of them are as below:</p>					
+					<p class="h4"><b><font color="orange">1.LAN (LOCAL AREA NETWORK):</font><br /></p>	
+					<p><img src="assets/lan1.jpg" height="150"></p>
+					<p>A local area network (LAN) consists of a computer network at a single site, typically an individual office building.</p>
+					<p class="h4"><b><font color="orange">2.MAN (METROPOLITAN AREA NETWORK):</font><br /></p>
+					<p><img src="assets/MAN.jpg" height="150"></p>					
+					<p>A metropolitan area network(MAN), consists of a computer network across an entire city, college campus or small region. A MAN is larger than a LAN, which is typically limited to a single building or site.</p>
+					<p class="h4"><b><font color="orange">2.WAN(WIDE AREA NETWORK):</font><br /></P>
+					<p><img src="assets/wan.jpg" height="150"></p>
+					<p>A wide area network, or WAN, occupies a very large area, such as an entire country or the entire world</p>
+					<button class="btn-continue" onclick="examples()">Career</button>
+				</div>
+				<div id="examples">
+					<p class="h4"><b><font color="#8A0808">NETWORK BASED JOB POSITIONS:</b></font></p>
+					<p><b><font color="orange">1. Network engineer:</font></b></p>					
+					<p>Network engineers are responsible for:<br />
+					a.implementing <br />
+					b.maintaining <br />
+					c.supporting<br />
+					d.developing and in some cases he also responsible for designing communication networks within an organization or between organizations.<p>
+					<p><b><font color="orange">2. Network administrator:</font></b></p>
+					<p>As a network administrator, your tasks generally fall into the following areas:<br />
+					a. Designing and planning the network<br />b. Setting up the network<br />c. Maintaining the network</p><br />
+					<p><b><font color="orange">2. Network Manager:</font></b></p><br />
+					Your job includes setting access to files, email, internet and security systems to prevent hackers from getting into the system.
+					Once the system is in place then your main tasks are to:<br />
+					a.Train staff<br />
+					b.Provide technical support<br />
+					c.Monitor system use<br />
+					d.Manage back-up<br />
+					</p>
+					<button class="btn-continue" onclick="future()">Compensation</button>
+				</div>
+				<div id="future">
+					<p class="h1"><b><font color="orange">Expected salary</font></b></p>
+					<p class="h4">Average Salary per annum in US for different designations are as follows:</p><br />
+					<p class="h4"><b>a.Network Engineer-$68,262</b></p><br />
+					<p class="h4"><b>b.Network Administrators-55$k</b></p><br />
+					<p class="h4" ><b>c.Network manager-$81K annually</b></p><br />
+					<p class="h3"><b><font color="orange">These amounts will vary depending on several factors:</font></b></p></br>
+					<p><b>a.Company<br />b.Location<br />c.Skill<br />d.Experience</b><br /></p>
+					<button class="btn-continue" onclick="followup()">Follow-Up!</button>
+				</div>
+				<div id="followup">
+					<p class="h1">Follow-Up Assessment</p>
+					<p class="h4">Describe the field that you are going to be featuring.  Use lots of descriptive words and ideas.  This text can take most of the page area, but probably shouldn't run off the page.</p>
+				</div>
+			</div>
+		</div>
+	</div>
+</div> <!-- End ./container for bootstrap -->
+
+<script src="js/jquery.js"></script>
+<script src="js/bootstrap.js"></script>
+
+<!-- Custom Theme JavaScript -->
+<script>
+function checkAnswer(){
+	document.getElementById("body_overlay").style.display="none";
+}
+
+function produceFilter(input){
+	document.getElementById("body_overlay").style.display="block";
+	document.getElementById("q1").style.display="none";
+	document.getElementById("q2").style.display="none";
+	document.getElementById("q3").style.display="none";
+	document.getElementById("q4").style.display="none";
+	if(input == 1){ document.getElementById("q1").style.display="block"; }
+	if(input == 2){ document.getElementById("q2").style.display="block"; }
+	if(input == 3){ document.getElementById("q3").style.display="block"; }
+	if(input == 4){ document.getElementById("q4").style.display="block"; }
+	// There is nothing to display if this is an error
+}
+
+function introduction(){
+	scroll(0,0);
+	document.getElementById("introduction").style.display="block";
+	document.getElementById("academics").style.display="none";
+	document.getElementById("career").style.display="none";
+	document.getElementById("examples").style.display="none";
+	document.getElementById("future").style.display="none";
+	document.getElementById("followup").style.display="none";
+}
+
+function academics(){
+	scroll(0,0);
+	document.getElementById("introduction").style.display="none";
+	document.getElementById("academics").style.display="block";
+	document.getElementById("career").style.display="none";
+	document.getElementById("examples").style.display="none";
+	document.getElementById("future").style.display="none";
+	document.getElementById("followup").style.display="none";
+}
+
+function career(){
+	scroll(0,0);
+	document.getElementById("introduction").style.display="none";
+	document.getElementById("academics").style.display="none";
+	document.getElementById("career").style.display="block";
+	document.getElementById("examples").style.display="none";
+	document.getElementById("future").style.display="none";
+	document.getElementById("followup").style.display="none";
+}
+
+function examples(){
+	scroll(0,0);
+	document.getElementById("introduction").style.display="none";
+	document.getElementById("academics").style.display="none";
+	document.getElementById("career").style.display="none";
+	document.getElementById("examples").style.display="block";
+	document.getElementById("future").style.display="none";
+	document.getElementById("followup").style.display="none";
+}
+
+function future(){
+	scroll(0,0);
+	document.getElementById("introduction").style.display="none";
+	document.getElementById("academics").style.display="none";
+	document.getElementById("career").style.display="none";
+	document.getElementById("examples").style.display="none";
+	document.getElementById("future").style.display="block";
+	document.getElementById("followup").style.display="none";	
+}
+
+function followup(){
+	scroll(0,0);	
+	document.getElementById("introduction").style.display="none";
+	document.getElementById("academics").style.display="none";
+	document.getElementById("career").style.display="none";
+	document.getElementById("examples").style.display="none";
+	document.getElementById("future").style.display="none";	
+	document.getElementById("followup").style.display="block";
+}
+
+(function($) {
+    $.fn.hasScrollBar = function() {
+        return this.get(0).scrollHeight > this.height();
+    }
+})(jQuery);
+
+$('#link').click(function(){
+    $("html, body").animate({ scrollTop: 500 }, 600);
+    return false;
+ });
+
+$('#check_for_scrollbar').hasScrollBar(
+		// Make scroll button display here
+		/* document.getElementById("scroll_button").style.display="block"; */
+	);
+
+function scroll_window(){
+	window.scrollBy(0, 100);
+}
+</script>
+</body>
+</html>

@@ -42,10 +42,10 @@
 			background-color:  #353535; 
 		}
 
-		#body_overlay {
+		#body_overlay_one, #body_overlay_two {
 			display: none;
 			width: 50%;
-			height: 50%;
+			height: 60%;
 			position: absolute;
 			top: 0;
 			right: 0;
@@ -92,9 +92,24 @@
 			margin-top: 1.4em;
 		}
 
+		#transition {
+			margin: 2.5em 0;
+		}
+
+		#transition p.explain {
+			font-size: 1.4em;
+		}
+
 		#description {
 			padding: 3.2em;
 			background-color: #fff;
+			color: #000;
+		}
+
+		#goal {
+			color: #660000;
+			font-size: 1.8em;
+			line-height: 1.0em;
 		}
 
 		#links {
@@ -118,25 +133,52 @@
 			background-color: rgba(52, 101, 127, 1.0);
 			color: rgba(0, 0, 0, 1.0);
 		}
+
+		span.highlight {
+			font-weight: 900;
+		}
+
+		.btn-close {
+			position: absolute;
+			top: 0;
+			right: 0;
+		}
 	</style>
 </head>
 
 <body>
 
-<div id="body_overlay">
+<div id="body_overlay_one">
+	<div class="container-fluid">
+		<div class="row" id="linkTo">  <!-- Begin Row for Description -->
+			<div class="col-sm-12">
+				<p class="h3">Roadmap To SIUccess!</p>
+				<div id="transition">
+				<p class="explain">Of the five Computer Science Concentrations, this learning module will focus on one: Computer Networks.</p>
+				</div>
+				<p><a class="btn" id="linkToButton" role="button" onclick="produceFilterB()" ><img height="50" width="50" src="assets/paw.png"><br />Take the Next Step!</a></p>
+				<button class="btn-close" onclick="hide()">X</button>
+			</div>
+		</div>
+	</div>
+</div> <!-- End #/body_overlay -->
+<div id="body_overlay_two">
 	<div class="container-fluid">
 		<div class="row" id="linkTo">  <!-- Begin Row for Description -->
 			<div class="col-sm-12">
 				<p class="h3">Roadmap To SIUccess!</p>
 				<div id="objectives">
 				<ul>
-					<li>Identify different uses of networks</li>
-					<li>Recognize different components and their usage</li>
-					<li>Spot different job roles depending on designation</li>
-					<li>Categorize the network type based on the area it covers</li>
+					<li>Demonstrate Course Requirements and Prerequisites</li>
+					<li>Itemize Concentration Sets</li>
+					<li>List Available Electives</li>
+					<li>Related Skills &amp; Abilities</li>
+					<li>Career Options for a Well-Educated Student</li>
+					<li>Reasonable Compensation Expectations</li>
 				</ul>
 				</div>
 				<p><a class="btn" id="linkToButton" href="display.html" role="button"><img height="50" width="50" src="assets/paw.png"><br />Start!</a></p>
+				<button class="btn-close" onclick="hide()">X</button>
 			</div>
 		</div>
 	</div>
@@ -151,7 +193,8 @@
 		<div class="col-sm-6 text-center">
 			<h1>Computer Science</h1>
 			<h2>Core Concentrations</h2>
-			<p><a class="btn btn-primary btn-lg lead-btn"  role="button" onclick="produceFilter()">Discover More!</a></p>
+			<p id="goal"><span class="underline">Goal:</span> To learn about the educational path to a Concentration and the Career path afterwards.</p>
+			<p><a class="btn btn-primary btn-lg lead-btn"  role="button" onclick="produceFilterA()">Continue</a></p>
 		</div>
 		<div class="col-sm-2">
 		</div>
@@ -163,7 +206,9 @@
 		<div class="col-sm-1">
 		</div>
 		<div class="col-sm-10">
-			<p>Computer science majors can use their electives to form an optional concentration in five different&nbsp;computer science areas: computer graphics and game development; computer networks and&nbsp;security; database and systems; software engineering and application development; or artificial&nbsp;intelligence and robotics. Computer science majors must take three courses (out of their 400-level&nbsp;electives) from a particular topic to receive a concentration in that area. Concentrations will not&nbsp;appear on the diploma but will be stated on a certificate issued by the department. The list of the&nbsp;courses for each concentration is as follows:</p>
+			<p class="h3">A word about the Computer Science Concentrations:</p>
+			<p>Computer science majors can use their electives to form an optional concentration in five different computer science areas: <span class="highlight">computer graphics and game development</span>; <span class="highlight">computer networks and security</span>; <span class="highlight">database and systems</span>; <span class="highlight">software engineering and application development</span>; or <span class="highlight">artificial intelligence and robotics</span>. Computer science majors must take three courses (out of their 400-level electives) from a particular topic to receive a concentration in that area. Concentrations will not appear on the diploma but will be stated on a certificate issued by the department. To learn more about the course concentrations, click continue:</p>
+			<p><a class="btn btn-primary btn-lg lead-btn"  role="button" onclick="produceFilterA()">Continue</a></p>
 <!--			<ul>
 				<li>&nbsp; &nbsp; Computer Graphics and Game Development: <a href="http://cs.siu.edu/_common/documents/courses/CS 484 as of 11-25-2013.pdf" target="_blank" title="cs484">CS 484</a>, <a href="http://cs.siu.edu/_common/documents/courses/CS485_Dec02.pdf" target="_blank" title="cs485">CS 485</a>, <a href="http://cs.siu.edu/_common/documents/courses/cs487_n.pdf" target="_blank">CS 487</a></li>
 				<li>&nbsp; &nbsp; Computer Networks and Security: <a href="http://cs.siu.edu/_common/documents/courses/CS408.pdf" target="_blank" title="cs408">CS 408</a>, <a href="http://cs.siu.edu/_common/documents/courses/CS 410 as of 10-30-2013.pdf" target="_blank" title="cs410">CS 410</a>, <a href="http://cs.siu.edu/_common/documents/courses/CS 440 as of 11-13-2013.pdf" target="_blank" title="cs440">CS 440</a>, <a href="http://cs.siu.edu/_common/documents/courses/CS441.pdf" target="_blank" title="cs441">CS 441</a></li>
@@ -207,8 +252,16 @@
 
 <!-- Custom Theme JavaScript -->
 <script>
-function produceFilter(){
-	document.getElementById("body_overlay").style.display="block";
+function produceFilterA(){
+	document.getElementById("body_overlay_one").style.display="block";
+}
+function produceFilterB(){
+	document.getElementById("body_overlay_one").style.display="none";
+	document.getElementById("body_overlay_two").style.display="block";
+}
+function hide(){
+	document.getElementById("body_overlay_one").style.display="none";
+	document.getElementById("body_overlay_two").style.display="none";	
 }
 </script>
 </body>
