@@ -75,11 +75,11 @@
 
 		ul#navigation {
 			list-style: none;
-			padding: 2.0em;
+			padding: 1.7em;
 		}
 
 		ul#navigation li {
-			padding: 1.0em;
+			padding: 0.8em;
 		}
 
 		ul#navigation li button {
@@ -87,15 +87,49 @@
 			width: 180px;
 			background-color: #660000;
 			color: #fff;
-			font-size: 1.3em;
+			font-size: 1.1em;
 		}
 
 		#display_field {
-			margin: 4.0em;
+			margin: 3.8em 8.0em;
 		}
 
 		#introduction, #prerequisites, #concentration_set, #electives, #skills_abilities, #career, #compensation, #followup {
 			display: none;
+		}
+
+		.btn-test {
+			background-color: #660000;
+			color: #fff;
+			font-size: 1.1em;
+		}
+
+		#question_one, #question_two, #question_three, #question_four, #question_five, #question_six, #evaluation {
+			display: none;
+		}
+
+		.question_field {
+			background-color: rgba(41, 143, 194, 0.15);
+			padding: 1.65em;
+		}
+
+		ul.answer_bar {
+			list-style: none;
+			padding: 1.05em;
+		}
+
+		li.answer {
+			padding: 0.95em;
+		}
+
+		#explanation {
+			background-color: #E8E6DD;
+			padding: 1.2em;
+			margin: 1.2em;
+		}
+
+		.explanation_field {
+			padding: 1.25em;
 		}
 	</style>
 </head>
@@ -112,7 +146,7 @@
 			<img src="assets/defaultHome-half.png" class="img-responsive" id="header-logo">
 		</div>
 		<div class="col-sm-6">
-			<p id="header-title">Computer Science Concentrations<br /><span class="emphasis">The Title for the Concentration Goes Here</span></p>
+			<p id="header-title">Computer Science Concentrations<br /><span class="emphasis">Artificial Intelligence and Robotics</span></p>
 		</div>
 		<div class="col-sm-1">
 		</div>
@@ -121,13 +155,11 @@
 		<div class="col-sm-2">
 			<ul id="navigation">
 				<li><button onclick="display_option(0)">Introduction</button></li>
-				<li><button onclick="display_option(1)">Prequisites</button></li>
+				<li><button onclick="display_option(1)">Course Requirements</button></li>
 				<li><button onclick="display_option(2)">Concentration Sets</button></li>
-				<li><button onclick="display_option(3)">Electives</button></li>
-				<li><button onclick="display_option(4)">Skills &amp; Abilities</button></li>
-				<li><button onclick="display_option(5)">Career</button></li>
-				<li><button onclick="display_option(6)">Compensation</button></li>
-				<li><button onclick="display_option(7)">Follow-Up!</button></li>
+				<li><button onclick="display_option(3)">Skills &amp; Abilities</button></li>
+				<li><button onclick="display_option(4)">Career &amp; Compensation</button></li>
+				<li><button onclick="display_option(5)">Follow-Up!</button></li>
 			</ul>
 		</div>
 		<div class="col-sm-10">
@@ -135,41 +167,124 @@
 				<div id="introduction">
 					<p class="h1">Introduction</p>
 					<p class="h4">Describe the field that you are going to be featuring.  Use lots of descriptive words and ideas.  This text can take most of the page area, but probably shouldn't run off the page.</p>
-					<button class="btn-continue" onclick="display_option(1)">Prerequisites</button>
+					<button class="btn-continue" onclick="display_option(1)">Course Requirements</button>
 				</div>
 				<div id="prerequisites">
-					<p class="h1">Course Requirements and Prerequisites</p>
+					<p class="h1">Course Requirements, Prerequisites, and Electives</p>
 					<p class="h4">Describe the field that you are going to be featuring.  Use lots of descriptive words and ideas.  This text can take most of the page area, but probably shouldn't run off the page.</p>
 					<button class="btn-continue" onclick="display_option(2)">Concentrations</button>
 				</div>
 				<div id="concentration_set">
 					<p class="h1">Concentration Sets</p>
 					<p class="h4">Describe the field that you are going to be featuring.  Use lots of descriptive words and ideas.  This text can take most of the page area, but probably shouldn't run off the page.</p>
-					<button class="btn-continue" onclick="display_option(3)">Electives</button>
-				</div>
-				<div id="electives">
-					<p class="h1">Electives</p>
-					<p class="h4">Describe the field that you are going to be featuring.  Use lots of descriptive words and ideas.  This text can take most of the page area, but probably shouldn't run off the page.</p>
-					<button class="btn-continue" onclick="display_option(4)">Skills &amp; Abilities</button>
+					<button class="btn-continue" onclick="display_option(3)">Skills &amp; Abilities</button>
 				</div>
 				<div id="skills_abilities">
 					<p class="h1">Skills &amp; Abilities</p>
 					<p class="h4">Describe the field that you are going to be featuring.  Use lots of descriptive words and ideas.  This text can take most of the page area, but probably shouldn't run off the page.</p>
-					<button class="btn-continue" onclick="display_option(5)">Career</button>
+					<button class="btn-continue" onclick="display_option(5)">Career &amp; Compensation</button>
 				</div>
 				<div id="career">
-					<p class="h1">Career</p>
+					<p class="h1">Careers &amp; Compensation</p>
 					<p class="h4">Describe the field that you are going to be featuring.  Use lots of descriptive words and ideas.  This text can take most of the page area, but probably shouldn't run off the page.</p>
-					<button class="btn-continue" onclick="display_option(6)">Compensation</button>
-				</div>
-				<div id="compensation">
-					<p class="h1">Compensation</p>
-					<p class="h4">Describe the field that you are going to be featuring.  Use lots of descriptive words and ideas.  This text can take most of the page area, but probably shouldn't run off the page.</p>
-					<button class="btn-continue" onclick="display_option(7)">Follow-Up!</button>
+					<button class="btn-continue" onclick="display_option(6)">Conclusion</button>
 				</div>
 				<div id="followup">
-					<p class="h1">Follow-Up Assessment</p>
-					<p class="h4">Describe the field that you are going to be featuring.  Use lots of descriptive words and ideas.  This text can take most of the page area, but probably shouldn't run off the page.</p>
+					<div id="begin_evaluation">
+						<p class="h1">Follow-Up Assessment</p>
+						<p class="h4">Take a moment to review this learning module?</p>
+						<button class="btn-test" onclick="next_question(1)">Begin Evaluation</button>
+					</div>
+					<div class="question_field" id="question_one">
+						<p class="h2">1.</p>
+						<p class="h4">
+							<ul class="answer_bar">
+								<li class="answer" id="answer_1A"><input type="radio" name="answer_one" onclick="check_answer('1','A')"> Option A</li>
+								<li class="answer" id="answer_1B"><input type="radio" name="answer_one" onclick="check_answer('1','B')"> Option B</li>
+								<li class="answer" id="answer_1C"><input type="radio" name="answer_one" onclick="check_answer('1','C')"> Option C</li>
+								<li class="answer" id="answer_1D"><input type="radio" name="answer_one" onclick="check_answer('1','D')"> Option D</li>
+							</ul>
+						</p>
+						<div class="explanation_field" id="explanation_one"></div>
+						<button class="btn-test" onclick="next_question(0)">Previous Question</button>
+						<button class="btn-test" onclick="next_question(2)">Next Question</button>
+					</div>
+					<div class="question_field" id="question_two">
+						<p class="h2">2.</p>
+						<p class="h4">
+							<ul class="answer_bar">
+								<li class="answer" id="answer_2A"><input type="radio" name="answer_two" onclick="check_answer('2','A')"> Option A</li>
+								<li class="answer" id="answer_2B"><input type="radio" name="answer_two" onclick="check_answer('2','B')"> Option B</li>
+								<li class="answer" id="answer_2C"><input type="radio" name="answer_two" onclick="check_answer('2','C')"> Option C</li>
+								<li class="answer" id="answer_2D"><input type="radio" name="answer_two" onclick="check_answer('2','D')"> Option D</li>
+							</ul>
+						</p>
+						<div class="explanation_field" id="explanation_two"></div>
+						<button class="btn-test" onclick="next_question(1)">Previous Question</button>
+						<button class="btn-test" onclick="next_question(3)">Next Question</button>
+					</div>
+					<div class="question_field" id="question_three">
+						<p class="h2">3.</p>
+						<p class="h4">
+							<ul class="answer_bar">
+								<li class="answer" id="answer_3A"><input type="radio" name="answer_three" onclick="check_answer('3','A')"> Option A</li>
+								<li class="answer" id="answer_3B"><input type="radio" name="answer_three" onclick="check_answer('3','B')"> Option B</li>
+								<li class="answer" id="answer_3C"><input type="radio" name="answer_three" onclick="check_answer('3','C')"> Option C</li>
+								<li class="answer" id="answer_3D"><input type="radio" name="answer_three" onclick="check_answer('3','D')"> Option D</li>
+							</ul>
+						</p>
+						<div class="explanation_field" id="explanation_three"></div>
+						<button class="btn-test" onclick="next_question(2)">Previous Question</button>
+						<button class="btn-test" onclick="next_question(4)">Keep Going</button>
+					</div>
+					<div class="question_field" id="question_four">
+						<p class="h2">4.</p>
+						<p class="h4">
+							<ul class="answer_bar">
+								<li class="answer" id="answer_4A"><input type="radio" name="answer_four" onclick="check_answer('4','A')"> Option A</li>
+								<li class="answer" id="answer_4B"><input type="radio" name="answer_four" onclick="check_answer('4','B')"> Option B</li>
+								<li class="answer" id="answer_4C"><input type="radio" name="answer_four" onclick="check_answer('4','C')"> Option C</li>
+								<li class="answer" id="answer_4D"><input type="radio" name="answer_four" onclick="check_answer('4','D')"> Option D</li>
+							</ul>
+						</p>
+						<div class="explanation_field" id="explanation_four"></div>
+						<button class="btn-test" onclick="next_question(3)">Previous Question</button>
+						<button class="btn-test" onclick="next_question(5)">Almost Done</button>
+					</div>
+					<div class="question_field" id="question_five">
+						<p class="h2">5.</p>
+						<p class="h4">
+							<ul class="answer_bar">
+								<li class="answer" id="answer_5A"><input type="radio" name="answer_five" onclick="check_answer('5','A')"> Option A</li>
+								<li class="answer" id="answer_5B"><input type="radio" name="answer_five" onclick="check_answer('5','B')"> Option B</li>
+								<li class="answer" id="answer_5C"><input type="radio" name="answer_five" onclick="check_answer('5','C')"> Option C</li>
+								<li class="answer" id="answer_5D"><input type="radio" name="answer_five" onclick="check_answer('5','D')"> Option D</li>
+							</ul>
+						</p>
+						<div class="explanation_field" id="explanation_five"></div>
+						<button class="btn-test" onclick="next_question(4)">Previous Question</button>
+						<button class="btn-test" onclick="next_question(6)">Last Question</button>
+					</div>
+					<div class="question_field" id="question_six">
+						<p class="h2">6.</p>
+						<p class="h4">
+							<ul class="answer_bar">
+								<li class="answer" id="answer_6A"><input type="radio" name="answer_six" onclick="check_answer('6','A')"> Option A</li>
+								<li class="answer" id="answer_6B"><input type="radio" name="answer_six" onclick="check_answer('6','B')"> Option B</li>
+								<li class="answer" id="answer_6C"><input type="radio" name="answer_six" onclick="check_answer('6','C')"> Option C</li>
+								<li class="answer" id="answer_6D"><input type="radio" name="answer_six" onclick="check_answer('6','D')"> Option D</li>
+							</ul>
+						</p>
+						<div class="explanation_field" id="explanation_six"></div>
+						<button class="btn-test" onclick="next_question(5)">Previous Question</button>
+						<button class="btn-test" onclick="next_question(7)">Conclusion</button>
+					</div>
+					<div class="question_field" id="evaluation">
+						<p class="h2">Evaluation &amp; Conclusion</p>
+						<p>Thank you for completing our learning module on <span class="emphasis">Artificial Intelligence and Robotics</span>.  We hope you enjoyed and learned something as well!</p>
+						<button class="btn-test" onclick="next_question(6)">Previous Question</button>
+						<button class="btn-test" onclick="next_question(0)">Try Again</button>
+					</div>
 				</div>
 			</div>
 		</div>
@@ -183,8 +298,8 @@
 <script>
 function display_option(display_option){
 	scroll(0,0);
-	var sectionArray = ["introduction", "prerequisites", "concentration_set", "electives", "skills_abilities", "career", "compensation", "followup"];
-	for(var i=0;i<8;i++){
+	var sectionArray = ["introduction", "prerequisites", "concentration_set", "skills_abilities", "career", "followup"];
+	for(var i=0;i<6;i++){
 		if(display_option == i){ document.getElementById(sectionArray[i]).style.display="block"; }
 		else {	document.getElementById(sectionArray[i]).style.display="none"; }
 	}
@@ -192,6 +307,32 @@ function display_option(display_option){
 
 function scroll_window(){
 	window.scrollBy(0, 100);
+}
+
+
+var questionArray = ["begin_evaluation", "question_one", "question_two", "question_three", "question_four", "question_five", "question_six", "evaluation"];
+
+var answers = ["", "A", "B", "C", "D", "E", "F"];
+
+var explanationArray = ["", "explanation_one", "explanation_two", "explanation_three", "explanation_four", "explanation_five", "explanation_six"]
+var explanations = ["", "Because", "This is Why", "I know it!", "I was right!", "Deal with it", "That is the answer"];
+
+function next_question(question_option){
+	// Reset all the questions
+	if(question_option == 0){
+		for(var z=1;z<7;z++){
+			document.getElementById(explanationArray[z]).style.display="none";		
+		}
+	}
+	for(var i=0;i<8;i++){
+		if(question_option == i){ document.getElementById(questionArray[i]).style.display="block"; }
+		else{ document.getElementById(questionArray[i]).style.display="none"; }
+	}
+}
+
+function check_answer(question_number,option_selected){
+	document.getElementById(explanationArray[question_number]).style.display="block";
+	document.getElementById(explanationArray[question_number]).innerHTML="You selected: Option " + option_selected + "<br />The Correct Answer Was: " + answers[question_number] + " \"" + explanations[question_number] + "\"";
 }
 </script>
 </body>

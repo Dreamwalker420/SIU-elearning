@@ -27,12 +27,10 @@ With the expansion of the field of Computer Science, several unique concentratio
 
 ## Learning Objectives
 
-* Demonstrate course requirements and prerequisites 
-* Concentration set
-* Available Electives
+* Demonstrate course requirements, prerequisites and electives
+* Detail concentration set
 * What will be learned and how it is applied in the field of study
-* The career options available to a well-educated student
-* Compensation expectations
+* Career options and compensation expectations
 
 ## Project Timeline
 
